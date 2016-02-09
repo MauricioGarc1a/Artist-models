@@ -1,7 +1,7 @@
 class CreateArts < ActiveRecord::Migration
   def change
     create_table :arts do |t|
-      t.String :title
+      t.string :title
       t.text :plot
       t.string :picture
       t.integer :duration
