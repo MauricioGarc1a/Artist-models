@@ -32,9 +32,27 @@ ActiveRecord::Schema.define(version: 20160209194509) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "genres", force: :cascade do |t|
+  create_table "works", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "genres_works", id: false, force: :cascade do |t|
+    t.integer "genre_id", null: false
+    t.integer "work_id", null: false
+  end
+
+  add_index "genres_works", ["genre_id", "work_id"], name: "index_genres_works_on_genre_id_and_work_id", using: :btree
+  add_index "genres_works", ["work_id"], name: "index_genres_works_on_work_id", using: :btree
+
+  create_table "works", force: :cascade do |t|
+    t.string   "title"
+    t.text     "plot"
+    t.string   "picture"
+    t.date     "release_date"
+    t.integer  "artist_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
