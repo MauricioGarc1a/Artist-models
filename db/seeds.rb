@@ -7,6 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Artist.destroy_all
 Artist.create ([
-  {name: "Toulouse-Lautrec", birth_date: Date.parse("1864-24-11")},
-  {name: "Rembrandt", birth_date: Date.parse("1606-15-7")}
+  {name: "Toulouse-Lautrec", birth_date:Date.parse("1864-24-11")},
+  {name: "Rembrandt", birth_date:Date.parse("1606-15-7")},
+  ])
+
+Genre.destroy_all
+Genre.create ([
+  {name: "Illustration"},
+  {name: "Painting"},
   ])
