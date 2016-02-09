@@ -1,10 +1,10 @@
-class CreateArt < ActiveRecord::Migration
+class CreateWork < ActiveRecord::Migration
   def change
-    create_table :arts do |t|
+    create_table :works do |t|
       t.string :title
       t.text :plot
       t.string :picture
-      t.integer :duration
+      t.date :realease_date
 
       t.timestamps null: false
     end
