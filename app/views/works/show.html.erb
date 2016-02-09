@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="page-header">
+    <h1><%= @work.title %></h1>
+  </div>
+
+  <aside class="col-sm-2">
+    <div class="poster">
+      <%= image_tag @work.picture, class: "img-responsive" %>
+    </div>
+  </aside>
+
+  <article class="work col-sm-8">
+    <p><%= @work.plot %></p>
+  </article>
+
+  <aside class="col-sm-2">
+    <%= render @work.artist %>
+  </aside>
+</div>
